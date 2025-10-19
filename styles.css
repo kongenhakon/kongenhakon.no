@@ -1,0 +1,30 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eab676;
+}
+
+.artikel{
+    background-color: #abdbe3;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+}
+#sfcdhs7n9rufb4rlp1te345jtnh92yc9t32{
+    background-color: black;
+    text-decoration: none;
+}
+#link1{
+    color:  black;
+    background-color: #FFFD98;
+  
+    text-decoration: none;
+  }
+textarea,input[type='text']{
+    background-color: #ca6363;
+
+}
+input[type="submit"],input[type="reset"]{
+    background-color: rgb(216, 195, 103);
+    padding: 2px;
+    margin: 5px;
+}
