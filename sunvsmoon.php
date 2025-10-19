@@ -50,7 +50,7 @@
             }
         }
         while(True){
-            echo"sun: "+.$sun;
+            echo"sun: ".$sun;
             echo"moon: ".$moon;
         }
         ?>
