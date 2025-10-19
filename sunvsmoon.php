@@ -1,58 +1,50 @@
 <html>
-    <body>
-        <div id="sun"></div>
-        <br>
-        <button onclick="suns()">sun</button>
-        <br>
-        <div id="moon"></div>
-        <br>
-        <button onclick="moons()">moon</button>
-        <?php
-        $moon=0;
-        $sun=0;
-        $dbpass = "qdRBGyVc8e6b";
-        $dbuser="psxrhyuu_php";
-        $dbnavn="psxrhyuu_kongenhakon";
-        $dbhost="localhost";
+    <head>
+    <link rel="stylesheet" href="style.css">    
+    <head>
+    <body><?php
         
-        $moonSql="insert into sunvsmoon (moon) values($moon)";
-        $sunSql="insert into sunvsmoon (sun) values($sun)";
+        require "config.php";
 
-        function moons(){
-            $moon=$moon+1;
-            $conn = new mysqli($dbhost,$dbuser,$dbpass);
+        $conn = new mysqli($dbhost,$dbuser,$dbpass);
 
-            if ($conn->connect_error){
+        if ($conn->connect_error){
 
             die("conn failed" . $conn->connect_error."<br>");
-
-            }
-            if ($conn->query($moonSql) === TRUE) {
-            } else {
-                echo "En feil oppstod: " . $conn->error;
-            }
-
 
         }
-        function suns(){
-            $sun=$sun+1;
-            $conn = new mysqli($dbhost,$dbuser,$dbpass);
 
-            if ($conn->connect_error){
-
-            die("conn failed" . $conn->connect_error."<br>");
-
-            }
-            if ($conn->query($sunSql) === TRUE) {
-                
+        if(isset($_GET['sun'])){
+            if ($conn->query("update ".$dbnavn.".params set value=value+1 where `key`='sunvsmoon_sun'") === TRUE) {
             } else {
                 echo "En feil oppstod: " . $conn->error;
             }
         }
-        while(True){
-            echo "sun: ".$sun;
-            echo "moon: ".$moon;
+
+        
+        if(isset($_GET['moon'])){
+            if ($conn->query("update ".$dbnavn.".params set value=value+1 where `key`='sunvsmoon_moon'") === TRUE) {
+            } else {
+                echo "En feil oppstod: " . $conn->error;
+            }
         }
+
+        $sun= $conn->execute_query("select value from ".$dbnavn.".params where `key`='sunvsmoon_sun'")->fetch_column();
+        $moon=$conn->execute_query("select value from ".$dbnavn.".params where `key`='sunvsmoon_moon'")->fetch_column();
         ?>
+        <div id="sun"><?php
+        echo "sun: $sun";
+        ?></div>
+        <br>
+        <a id="link1" href="sunvsmoon.php?sun=TRUE">sun</a>
+        <br>
+        <br>
+        <br>
+        <div id="moon"><?php
+        echo "moon: $moon";
+        ?></div>
+        <br>
+        <a id="link1" href="sunvsmoon.php?moon=TRUE">moon</a>
+        
     </body>
 </html>
