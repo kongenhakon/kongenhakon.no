@@ -1,0 +1,80 @@
+body{
+
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: black;
+
+}
+
+
+button{
+    font-size: 100;
+    color: black;
+    margin: 20px;
+    padding: 10;
+  
+}
+
+#leader_board{
+    background-color: #149FDB;
+    border-radius: 50px;
+    color: black;
+    padding: 20px;
+    margin: 20px;
+    font-size: 20;
+}
+
+#sfcdhs7n9rufb4rlp1te345jtnh92yc9t32{
+
+    background-color: black;
+
+}
+
+#link1{
+
+    color:  black;
+
+    background-color: white;
+
+    text-decoration: none;
+
+    padding: 50;
+
+    margin: 50px;
+
+}
+
+input[type='submit'], input[type='reset']{
+
+    font-size: 20;
+
+    margin: 10px;
+
+    padding: 5px;
+
+    padding-left: 10px;
+
+    padding-right: 10px;
+
+    border-radius: 180px;
+
+}
+
+textarea,input[type='text'],textarea,input[type='password']{
+
+    font-size: 20;
+
+    color: black;
+
+    background-color: antiquewhite;
+
+    padding: 5px;
+
+    margin: 10px;
+
+    text-decoration: none;
+
+}
+

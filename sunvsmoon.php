@@ -1,6 +1,6 @@
 <html>
     <head>
-    <link rel="stylesheet" href="style.css">    
+    <link rel="stylesheet" href="style3.css">    
     <head>
     <body><?php
         
@@ -36,13 +36,24 @@
         echo "sun: $sun";
         ?></div>
         <br>
+        <br>
+        <br>
+        <br>
         <a id="link1" href="sunvsmoon.php?sun=TRUE">sun</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <br>
         <br>
         <br>
         <div id="moon"><?php
         echo "moon: $moon";
         ?></div>
+        <br>
+        <br>
+        <br>
         <br>
         <a id="link1" href="sunvsmoon.php?moon=TRUE">moon</a>
         
