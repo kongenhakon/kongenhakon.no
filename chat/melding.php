@@ -1,8 +1,11 @@
-<html>
+<?php
+
+session_start();
+?><html>
 
   <head>
 
-        <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="../style2.css">
 
   </head>
 
@@ -13,16 +16,16 @@
 
 
 
-
-<form action="lageArtitler.php" method = "POST">
-
-  <label id="overskrift">overskrift:</label><br>
-
-  <input type="text" id="overskriften" name="overskriften" placeholder="overskriften"><br>
+<?php 
+if (!isset($_SESSION['username'])){
+    echo "Logg inn tulling";
+}
+?>
+<form action="melding.php" method = "POST">
 
   <label id="tekst">tekst:</label><br>
 
-  <textarea name="tekst" placeholder="tekst" rows="20" cols="50" data-gramm_editor="false"></textarea><br>
+  <textarea name="melding" placeholder="tekst" rows="20" cols="50" data-gramm_editor="false"></textarea><br>
 
   <input type="submit" value="Submit"><br>
 
@@ -37,7 +40,7 @@
 <?php
 $banede_iper = []; // Legg til IP-adresser som skal bannes, f.eks. ['123.456.789.000'].
 
-if (isset($_POST['overskriften']) && $_POST['overskriften'] != "" && $_POST['tekst'] != "") {
+if (isset($_SESSION['username']) && isset($_POST['melding']) && $_POST['melding'] != "") {
     require "../config.php";
 
     $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbnavn); // Pass på å legge til $dbnavn her.
@@ -51,17 +54,29 @@ if (isset($_POST['overskriften']) && $_POST['overskriften'] != "" && $_POST['tek
         echo "Du er bannet";
     } else {
         // Lag SQL-spørringen for å sette inn data i databasen.
-        $overskrift = $_POST['overskriften'];
-        $tekst = $_POST['tekst'];
-        $ip = $_SERVER['REMOTE_ADDR'];
+        $melding = $_POST['melding'];
+        $bruker = $_SESSION['username'];
 
-        $sql = "INSERT INTO artikler (overskrift, tekst, ip) VALUES ('$overskrift', '$tekst', '$ip')";
+        $sql = "INSERT INTO chat (tekst, brukernavn) VALUES ( '$melding', '$bruker')";
 
         if ($conn->query($sql) === TRUE) {
-            echo "Din artikkel har blitt lagret!";
+            echo "Din melding er sendt!";
         } else {
             echo "En feil oppstod: " . $conn->error;
         }
+
+        $conn->query("DELETE FROM chat
+                    WHERE id NOT IN (
+                        SELECT id
+                        FROM (
+                            SELECT id
+                            FROM chat
+                            ORDER BY id DESC
+                            LIMIT 10
+                        ) AS keep
+                    );");
+
+        
     }
 
     $conn->close();
@@ -85,13 +100,12 @@ if (isset($_POST['overskriften']) && $_POST['overskriften'] != "" && $_POST['tek
 
     ?>
 
-    <h1>lag en artikel</h1>
 
      <br>
 
      <br>
 
-     <a href="../snfl/">tilbake til start</a>
+     <a href="../chat/">tilbake til start</a>
 
     </body> 
 

@@ -27,12 +27,16 @@
         </div>
         <br>
         <br>
-        <a href="/chat/melding.php">lag en melding</a>
+        
+        <a href="melding.php">lag en melding</a>
+        
         <br>
         <br>
+        <div id="leader_board">
         <?php 
         require "popup.php";
         ?>
+        </div>
     </body>
 
 </html>

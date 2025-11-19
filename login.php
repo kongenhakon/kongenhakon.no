@@ -61,7 +61,7 @@ require "config.php";
 
             ?>
 
-            <form action="/" method="post">
+            <form action="./" method="post">
 
                 <div id="bruker">
 

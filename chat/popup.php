@@ -11,23 +11,26 @@ if ($conn->connect_error){
 }
 
 
-$artikler = $conn->query("select * from ".$dbnavn.".artikler ORDER BY id desc");
+$meldinger = $conn->query("select * from ".$dbnavn.".chat ORDER BY id desc");
 
 
 
-if ($artikler->num_rows > 0){
+if ($meldinger->num_rows > 0){
 
-    while ($artikel = $artikler->fetch_assoc()){
+    while ($melding = $meldinger->fetch_assoc()){
 
         ?>
 
-        <div class="artikel">
+        <div class="melding">
 
-            <h1><?php echo $artikel['overskrift'];?></h1>
+            <h3><?php echo $melding['brukernavn'];?>:</h3>
 
-            <p><?php echo nl2br($artikel['tekst']);?></p>
+            <p><?php echo nl2br($melding['tekst']);?></p>
 
         </div>
+        <br/>
+        <br/>
+        <br/>
 
         
 

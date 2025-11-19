@@ -8,8 +8,8 @@ session_start();
     </head>
     <body>
         <br>
-        <a id="link1" href="/snfl/">STORE NORSKE FALSKE LEKSIKON</a>
-        <a id="link1" href="/clicker/">online clicker spill</a><br><br><br><br>
+        <a id="link1" href="snfl/">STORE NORSKE FALSKE LEKSIKON</a>
+        <a id="link1" href="clicker/">online clicker spill</a><br><br><br><br>
         <a id="link1" href="https:\\kongenhakon.github.io">GITHUB SIDE</a>
         <a id="link1" href="https:\\kongenhakon.no/matte">Matte</a>
         <a id="link1" href="https:\\kongenhakon.no/sunvsmoon.php">SUN VS MOON</a><br><br>
