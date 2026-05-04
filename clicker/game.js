@@ -18,8 +18,8 @@ function get_users(){
 get_users();
 
 
-
 function pluss_score(){
+
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function(){
         if (xhttp.status==401){
@@ -32,4 +32,6 @@ function pluss_score(){
     xhttp.open("GET","score.php");
     xhttp.send();
 }
+
+
 setInterval(get_users,1000);

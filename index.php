@@ -4,7 +4,7 @@ session_start();
 ?>
 <html>
     <head>
-        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <br>
@@ -12,6 +12,7 @@ session_start();
         <a id="link1" href="clicker/">online clicker spill</a><br><br><br><br>
         <a id="link1" href="https:\\kongenhakon.github.io">GITHUB SIDE</a>
         <a id="link1" href="https:\\kongenhakon.no/matte">Matte</a>
+        <a id="link1"  href="https:\\kongenhakon.no/chat/">Chat</a>
         <a id="link1" href="https:\\kongenhakon.no/sunvsmoon.php">SUN VS MOON</a><br><br>
 	    <h1>visninger til sammen:</h1><br>
         <div id="sfcdhs7n9rufb4rlp1te345jtnh92yc9t32"></div><script type="text/javascript" src="https://counter8.stat.ovh/private/counter.js?c=dhs7n9rufb4rlp1te345jtnh92yc9t32&down=async" async></script><noscript><a href="https://www.freecounterstat.com" title="hit counters"><img src="https://counter8.stat.ovh/private/freecounterstat.php?c=dhs7n9rufb4rlp1te345jtnh92yc9t32" title="hit counters" alt="hit counters"></a></noscript>
@@ -22,7 +23,7 @@ session_start();
         <div>bruker:
             <br>
             <br>
-            <div>bruker navn:
+            <div>brukernavn:
                 <?php
                 require "login.php";
                 ?>
