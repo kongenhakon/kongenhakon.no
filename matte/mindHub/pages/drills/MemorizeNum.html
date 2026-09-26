@@ -3,26 +3,29 @@
     <head>
 	    <meta charset="UTF-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../../style.css">
         <script src="https://kit.fontawesome.com/35d7f843e1.js" crossorigin="anonymous"></script>
 	    <title>Mind Hub</title>
-        <script src="../script.js"></script>
-        <script src="MemoryDrill.js"></script>
+        <script src="../../script.js"></script>
+        <script src="MemorizeNum.js"></script>
     </head>
     <body>
-        <h1 id="center">Memorize Things</h1>
+        <h1 id="center">Memorize Numbers</h1>
         <div>
-            <button id="iconButton" type="button" onclick="gotoPage('../index.html')">
+            <button id="iconButton" type="button" onclick="gotoPage('../drills.html')">
                 <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button id="iconButton" type="button" onclick="gotoPage('../articles/numbers.html')">
+                <i class="fa-solid fa-thumbtack"></i>
             </button>
         </div><br><br><br>
         <h3 id="selected"></h3><br>
         <div id="center">
-            <div id="thing">Press Start to get the list of items</div>
+            <div id="thing">Press Start to get the list of numbers!</div>
             <br>
             <br>
             <div id="textBox">
-                <input id="userInput" type="text" placeholder="One word at a time here..."><br>
+                <input id="userInput" type="text" placeholder="One num at a time here..."><br>
                 <button id="submitButton" type="button" onclick="submitAnswer()">Submit</button>
             </div>
             <button id="NextButton" type="button">
